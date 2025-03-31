@@ -10,7 +10,7 @@ namespace eCommerce.API.Controllers
         private readonly IUserService _userService = userService ?? throw new ArgumentNullException(nameof(userService));
         private readonly ILogger<AuthController> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
-        [HttpPost]
+        [HttpPost("register")]
         public async Task<IActionResult> Register(Core.DTO.RegisterRequest registerRequest)
         {
             try
@@ -24,6 +24,7 @@ namespace eCommerce.API.Controllers
             }
         }
 
+        [HttpPost("login")]
         public async Task<IActionResult> Login(Core.DTO.LoginRequest loginRequest)
         {
             try
